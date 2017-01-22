@@ -1,0 +1,38 @@
+<div class="bs-docs-section">
+	<div class="page-header">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 id="ques"
+					style="font-size: 25px; font-family: Georgia, 'Times New Roman', Times, Helvetica, Arial, serif; font-weight: lighter;">Problem</h1>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-8"
+		style="border: 1px solid #ebebeb; border-color: #4e5d6c; padding: 15px; margin-left: 16px; margin-bottom: 20px; border-left-width: 4px; box-shadow: 0.1em 0.0em 0.1em 0.1em #4e5d6c">
+
+		<p class="heading-text">{{vm.question.question}}</p>
+		<p>Solution :</p>
+		<p class="content-text">{{vm.question.answer}}</p>
+	</div>
+</div>
+
+<div class="col-lg-12">
+	<button type="button" style="margin: 5px;" class="btn btn-default"
+		data-container="body" ng-click="vm.showCodeEditor()">Try it
+		yourself>></button>
+</div>
+
+<div class="col-lg-8" ng-show="vm.showEditor" 
+		style="border: 1px solid #ebebeb; border-color: #4e5d6c; padding: 15px; margin-left: 16px; margin-bottom: 20px;">
+<p>Input : </p>
+<textarea class="col-lg-12" style="height:300px;" draggable="true"  ng-model="vm.editorText">{{vm.editorText}}</textarea>
+<br></br>
+		<button type="button" style="margin: 5px;" class="btn btn-default"
+			data-container="body" ng-click="vm.executeCode()">Compile/Run</button>
+<div ng-show="vm.showOutput">
+<p>Output : </p>			
+<textarea class="col-lg-12" style="height:200px;border: 1px solid #ebebeb; border-color: #4e5d6c;background:#2b3e50;color:white;" draggable="true"  readonly="readonly" ng-model="vm.output"></textarea>
+</div>
+
+</div>
+	

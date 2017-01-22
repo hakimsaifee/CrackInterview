@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="crackInterviewApp">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Crack Interview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+   <link rel="stylesheet" href="../../css/bootstrap.css"></link>
+    <!-- <link rel="stylesheet" href="../assets/css/custom.min.css"> -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     /* (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })(); */
+
+    </script>
+
+<!--  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+ --> 
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  -->
+  <!--  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+   -->  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+    <script src="../../js/angular-ui-bootstrap.js"></script>
+    
+   
+    <script
+	src="../../js/app.js">
+</script>
+
+    <script
+	src="../../js/technologyController.js">
+</script>
+
+<script
+	src="../../js/questionController.js">
+</script>
+
+<script
+	src="../../js/questionDetailController.js">
+</script>
+
+
+<script
+	src="../../js/topicService.js">
+</script>
+
+<script
+	src="../../js/questionService.js">
+</script>
+    
+  </head>
+  <body >
+  
+  <div ng-controller="TechnologyController as vm">
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand" style="font-size: 30px;
+          font-family: Georgia,'Times New Roman',Times,Helvetica,Arial,serif;font-weight: lighter;letter-spacing: 5px;">Crack Interview</a>
+          <p style="font-size: 13px;">A smart way to get it done</p>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+    
+ <!--   populate tech -->
+        <div class="navbar-collapse collapse" id="navbar-main">
+         
+          <ul class="nav navbar-nav navbar-right">
+          <li><a ng-click="vm.technologyChanged(1);"  style="font-size: 22px;">JAVA</a></li>
+          <li><a href=""  style="font-size: 22px;">.NET</a></li>
+            <li><a href="http://builtwithbootstrap.com/" target="_blank" style="font-size: 1em">Login</a></li>
+          </ul>
+          
+        </div>
+        
+      </div>
+    </div>
+
+
+
+<div class="container">
+
+<div class="bs-docs-section">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 id="top" style="font-size: 25px;font-family: Georgia,'Times New Roman',Times,Helvetica,Arial,serif;
+    font-weight: lighter;">Topics</h1>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="row" >
+          <div class="col-lg-12">
+          <button type="button" style="margin:5px;" class="btn btn-default" data-container="body"  ng-click="vm.topicChanged(topic.id)" ng-repeat="topic in vm.topics">{{topic.name}}</button>
+          </div>
+        </div>
+        
+      </div>
+      
+      <ng-view></ng-view>
+      <!-- <div>
+      
+       <ul uib-pagination="true" ng-change="pageChanged()" boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+
+    
+      </div> -->
+    
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/custom.js"></script> -->
+  <script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>
+      

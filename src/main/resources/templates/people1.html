@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html ng-app="main">
+<head>
+<title>Welcome</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script>
+     angular.module('main',[])
+     .controller('PeopleController', function($scope, $http){
+     $scope.people = [];
+     $scope.fetchContacts = function() {
+    	$http({method : 'GET', url : '/getPersons'}).success(function (people) {
+    		$scope.people = people;
+    	}) 
+     };
+     });
+     </script>
+</head>
+<body ng-controller="PeopleController">
+	<table>
+		<tr ng-repeat="person in people">
+			<td>{{person.name}}</td>
+			<td>{{person.lastname}}</td>
+			
+		</tr>
+	</table>
+	<input type="text" ng-model="people[0].name"></input>
+	<button ng-click="fetchContacts()">Fetch</button>
+</body>
+</html>

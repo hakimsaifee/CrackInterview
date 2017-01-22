@@ -1,0 +1,4 @@
+runtime: custom
+vm: true
+env_variables:
+   MY_VAR_COLOR: 'blue'
